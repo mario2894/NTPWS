@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link rel="stylesheet" href="styles.css">
+
+		<title>Napredne tehnike programiranja web servisa</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="description" content="Projektni zadatak">
+		<meta name="keywords" content="programiranje, web servisi">
+		<meta name="author" content="Mario Tušek">
+		<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+	</head>
+<body>
+	<header>
+		<div class="banner-image"></div>
+		<nav>
+			<ul>
+			  <li><a href="index.php">Početna stranica</a></li>
+			  <li><a href="news.php">Novosti</a></li>
+			  <li><a href="contact.php">Kontakt</a></li>
+			  <li><a href="#">O nama</a></li>
+			  <li><a href="gallery.php">Galerija</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+        <h1>Vijesti</h1>
+        <div class="news">
+                <a href="news1.html"><img src="https://ip.index.hr/remote/indexnew.s3.index.hr/5c2e282f-52ad-4f32-a9e6-ad3abbb15f42.jpg?width=112&height=72&mode=crop&anchor=topcenter&scale=both" alt="Spriječen teroristički napad u Moskvi" title="Spriječen teroristički napad u Moskvi"></a>
+                <h2><a href="news1.html">Spriječen teroristički napad u Moskvi</a></h2>
+                <p>RUSKE sigurnosne službe spriječile su teroristički bombaški napad i pritvorile muškarca koji se pripremio detonirati bombu ispred vladine zgrade, objavila je Savezna sigurnosna služba (FSB).
+                        <a href="news1.html">Više ...</a>
+                </p>
+                <p><time datetime="2020-10-22">22 October 2020</time></p>
+                <hr>
+                <a href="news2.html"><img src="https://ip.index.hr/remote/indexnew.s3.index.hr/d08030b3-63e6-4fed-a676-2015bdfe7da3.jpg?width=112&height=72&mode=crop&anchor=topcenter&scale=both" alt="Zoran Milanović nekad je vodio reformirane komuniste. Sad je žestoki antikomunist" title="Zoran Milanović nekad je vodio reformirane komuniste. Sad je žestoki antikomunist"></a>
+                <h2><a href="news2.html">Zoran Milanović nekad je vodio reformirane komuniste. Sad je žestoki antikomunist</a></h2>
+                <p>SADA već skoro svakog tjedna Zoran Milanović, aktualni predsjednik države, nađe način da u masi riječi kojima zatrpava javnost progura i one koje svjedoče o njegovu gorljivu antikomunizmu. Jučer se, tako, prisjetio komunista iz Gradačca. Zašto baš Gradačca? Pa nije neuobičajeno da se u predsjednikovim rečenicama u ulozi lošeg primjera pojavi neki toponim, i to češće bosanskohercegovački - Prnjavor, Ilidža, eto i Gradačac - nego hrvatski - sjetimo se Špičkovine - no danas bismo taj već zapaženi i opisani fenomen zaobišli. 
+                        <a href="news2.html">Više ...</a>
+                </p>
+                <p><time datetime="2020-10-22">22 October 2020</time></p>
+                <hr>
+                <a href="news3.html"><img src="https://ip.index.hr/remote/indexnew.s3.index.hr/40c60a0a-eaa3-40af-9f2d-069fd5c790e7.jpg?width=112&height=72&mode=crop&anchor=topcenter&scale=both" alt="Senat prihvatio Trumpovu sutkinju, demokrati bojkotirali glasanje" title="Senat prihvatio Trumpovu sutkinju, demokrati bojkotirali glasanje"></a>
+                <h2><a href="news3.html">Senat prihvatio Trumpovu sutkinju, demokrati bojkotirali glasanje</a></h2>
+                <p>ODBOR za pravosuđe američkog Senata, koji kontroliraju republikanci, prihvatio je nominaciju Amy Coney Barrett za sutkinju Vrhovnog suda unatoč bojkotu demokrata, čime je oslobođen put za njezino potvrđivanje u Senatu. Svih 12 članova iz redova republikanaca glasalo je za Barrett, dok je deset demokrata bojkotiralo glasanje. 
+                        <a href="news3.html">Više ...</a>
+                </p>
+                <p><time datetime="2020-10-22">22 October 2020</time></p>
+                <hr>
+        </div>
+	</main>
+	<footer>
+		<p>Copyright &copy; 2020 Mario Tušek. <a href="https://github.com/mario2894/ntpws"><img src="img/GitHub.png" title="Github" alt="Github"></a></p>
+	</footer>
+</body>
+</html>
