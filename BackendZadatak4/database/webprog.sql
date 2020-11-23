@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2020 at 05:55 PM
+-- Generation Time: Nov 23, 2020 at 06:44 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -318,8 +318,7 @@ INSERT INTO `news` (`id`, `title`, `description`, `date`, `picture`, `archive`, 
 (1, 'ZBOG OVAKVIH STVARI MESSI JE NAJVEĆI ? to bi napravio Ronaldo u ovakvoj situaciji?', 'Golove su za Barcu postigli Luis Suarez (29., 47.), Paulinho (41., 75.), ali je utakmica protekla u znaku promašaja Lea Messija. Messi je pogodio dvije vratnice, jednu gredu, imao je još tri čiste prilike, a u 69. minuti mu je vratar Ruben Ramirez obranio i penal. Vratnicu su zatresli i Suarez i Jordi Alba, a Urugvajcu je u 45. minuti poništen regularni gol tako da je momčad iz La Corune glatko mogla izgubiti i s dvocifrenim rezultatom.\r\n \r\nIako Messiju jučer nije išlo, premda nije uspijevao pogoditi mrežu Deportiva, još jednom, po tko zna koji put, pokazao je da je zaista jedan od najvećih ikad. Igrala se 28. minuta utakmice na Camp Nou, golova još nije bilo kad je nakon jednog fantastičnog proigravanja Argentinac izašao sam pred vratara gostiju. Messi je mogao birati gdje će gađati, takve šanse on ne promašuje, no odlučio je loptu dodati Suarezu koji ju je samo gurnuo u praznu mrežu.', '2020-11-22 17:54:34', '1-93.jpg', 'N', b'1'),
 (2, '&quot;EGIPATSKI MESSI&quot;, LEGENDA LIVERPOOLA Kako mu je to uspjelo za samo četiri mjeseca?', 'Golove su za Barcu postigli Luis Suarez (29., 47.), Paulinho (41., 75.), ali je utakmica protekla u znaku promašaja Lea Messija. Messi je pogodio dvije vratnice, jednu gredu, imao je još tri čiste prilike, a u 69. minuti mu je vratar Ruben Ramirez obranio i penal. Vratnicu su zatresli i Suarez i Jordi Alba, a Urugvajcu je u 45. minuti poništen regularni gol tako da je momčad iz La Corune glatko mogla izgubiti i s dvocifrenim rezultatom.\r\n \r\nIako Messiju jučer nije išlo, premda nije uspijevao pogoditi mrežu Deportiva, još jednom, po tko zna koji put, pokazao je da je zaista jedan od najvećih ikad. Igrala se 28. minuta utakmice na Camp Nou, golova još nije bilo kad je nakon jednog fantastičnog proigravanja Argentinac izašao sam pred vratara gostiju. Messi je mogao birati gdje će gađati, takve šanse on ne promašuje, no odlučio je loptu dodati Suarezu koji ju je samo gurnuo u praznu mrežu.', '2020-11-22 17:54:41', '2-14.png', 'N', b'1'),
 (4, 'Test vijesti', 'Ovo je neki tekst vijesti', '2020-11-22 17:34:48', '', 'Y', b'0'),
-(5, 'nova vijest od usera', 'ovo je tekst vijesti', '2020-11-22 18:02:28', '5-82.png', 'N', b'1'),
-(13, 'dwawa', 'fafea', '2020-11-22 18:42:02', '13-29.png', 'N', b'0');
+(14, 'Testiranje vijesti galerija', 'test vijesti galerija', '2020-11-23 17:41:53', '14-44.png', 'N', b'1');
 
 -- --------------------------------------------------------
 
@@ -343,11 +342,7 @@ TRUNCATE TABLE `news_pictures`;
 --
 
 INSERT INTO `news_pictures` (`news_pictures_id`, `news_id`, `picture`) VALUES
-(2, 13, '13-9.png'),
-(3, 13, '13-49.png'),
-(9, 13, '13-10.png'),
-(10, 13, '13-20.png'),
-(11, 13, '13-50.png');
+(12, 14, '14-99.png');
 
 -- --------------------------------------------------------
 
@@ -461,13 +456,13 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `news_pictures`
 --
 ALTER TABLE `news_pictures`
-  MODIFY `news_pictures_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `news_pictures_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `roles`
