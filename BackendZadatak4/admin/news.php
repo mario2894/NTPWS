@@ -24,14 +24,14 @@
 			if ($ext == '.jpg' || $ext == '.png' || $ext == '.gif') { # test if format is picture
 				$_query  = "UPDATE news SET picture='" . $_picture . "'";
 				$_query .= " WHERE id=" . $ID . " LIMIT 1";
-				$_result = @mysqli_query($MySQL, $_query);
-				$_SESSION['message'] .= '<p>Slika uspješno dodana.</p>';
+                $_result = @mysqli_query($MySQL, $_query);
+                $_SESSION['message'] .= '<p>Uspješno dodana glavna slika.</p>';
 			}
         }
-		
+
+        require_once('news_pictures_adding.php');
 		
 		$_SESSION['message'] .= '<p>Uspješno dodana vijest!</p>';
-		
 		# Redirect
 		header("Location: index.php?menu=8&action=2");
 	}
@@ -48,7 +48,7 @@
         $query .= " LIMIT 1";
         $result = @mysqli_query($MySQL, $query);
 
-       
+        $ID = (int)$_POST['edit'];
 		
 		# picture
         if($_FILES['picture']['error'] == UPLOAD_ERR_OK && $_FILES['picture']['name'] != "") {
@@ -57,17 +57,19 @@
 			# strrchr - Find the last occurrence of a character in a string
 			$ext = strtolower(strrchr($_FILES['picture']['name'], "."));
             
-			$_picture = (int)$_POST['edit'] . '-' . rand(1,100) . $ext;
+			$_picture = $ID . '-' . rand(1,100) . $ext;
 			copy($_FILES['picture']['tmp_name'], "news/".$_picture);
 			
 			
 			if ($ext == '.jpg' || $ext == '.png' || $ext == '.gif') { # test if format is picture
 				$_query  = "UPDATE news SET picture='" . $_picture . "'";
-				$_query .= " WHERE id=" . (int)$_POST['edit'] . " LIMIT 1";
+				$_query .= " WHERE id=" . $ID . " LIMIT 1";
 				$_result = @mysqli_query($MySQL, $_query);
 				$_SESSION['message'] .= '<p>Uspješno dodana slika.</p>';
 			}
         }
+
+        require_once('news_pictures_adding.php');
 		
         $_SESSION['message'] = '<p>Vijest uspješno promijenjena!</p>';
         
@@ -79,7 +81,20 @@
 	
 	# Delete news
 	if (isset($_GET['delete']) && $_GET['delete'] != '') {
-		
+        
+        # Delete news_picture
+        $query  = "SELECT picture FROM news_pictures";
+        $query .= " WHERE news_id=".(int)$_GET['delete']." LIMIT 1";
+        $result = @mysqli_query($MySQL, $query);
+        $row = @mysqli_fetch_array($result);
+        @unlink("news/".$row['picture']); 
+
+        $query  = "DELETE FROM news_pictures";
+        $query .= " WHERE news_id=".(int)$_GET['delete']." LIMIT 1";
+        $result = @mysqli_query($MySQL, $query);
+        $row = @mysqli_fetch_array($result);
+        @unlink("news/".$row['picture']); 
+
 		# Delete picture
         $query  = "SELECT picture FROM news";
         $query .= " WHERE id=".(int)$_GET['delete']." LIMIT 1";
@@ -134,7 +149,22 @@
 			<textarea id="description" name="description" placeholder="Tekst vijesti..." required></textarea>
 				
 			<label for="picture">Slika</label>
-			<input type="file" id="picture" name="picture">';
+            <input type="file" id="picture" name="picture">
+            
+            <label for="picture">Dodatna slika 1</label>
+            <input type="file" id="picture1" name="picture1">
+            
+            <label for="picture">Dodatna slika 2</label>
+            <input type="file" id="picture2" name="picture2">
+            
+            <label for="picture">Dodatna slika 3</label>
+            <input type="file" id="picture3" name="picture3">
+            
+            <label for="picture">Dodatna slika 4</label>
+            <input type="file" id="picture4" name="picture4">
+            
+            <label for="picture">Dodatna slika 5</label>
+			<input type="file" id="picture5" name="picture5">';
             
             if($_SESSION['user']['role_id'] == 1 || $_SESSION['user']['role_id'] == 2) {
                 print '
@@ -172,8 +202,23 @@
 			<label for="description">Tekst *</label>
 			<textarea id="description" name="description" placeholder="Opis vijesti..." required>' . $row['description'] . '</textarea>
 				
-			<label for="picture">Slika</label>
-			<input type="file" id="picture" name="picture">
+			<label for="picture">Glavna slika</label>
+            <input type="file" id="picture" name="picture">
+            
+            <label for="picture">Dodatna slika 1</label>
+            <input type="file" id="picture1" name="picture1">
+            
+            <label for="picture">Dodatna slika 2</label>
+            <input type="file" id="picture2" name="picture2">
+            
+            <label for="picture">Dodatna slika 3</label>
+            <input type="file" id="picture3" name="picture3">
+            
+            <label for="picture">Dodatna slika 4</label>
+            <input type="file" id="picture4" name="picture4">
+            
+            <label for="picture">Dodatna slika 5</label>
+			<input type="file" id="picture5" name="picture5">
 						
 			<label for="archive">Arhiva:</label><br />
             <input type="radio" name="archive" value="Y"'; if($row['archive'] == 'Y') { echo ' checked="checked"'; $checked_archive = true; } echo ' /> DA &nbsp;&nbsp;

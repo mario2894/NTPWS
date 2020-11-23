@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2020 at 11:49 AM
+-- Generation Time: Nov 23, 2020 at 05:55 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -33,6 +33,11 @@ CREATE TABLE `countries` (
   `country_name` varchar(100) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Truncate table before insert `countries`
+--
+
+TRUNCATE TABLE `countries`;
 --
 -- Dumping data for table `countries`
 --
@@ -287,6 +292,91 @@ INSERT INTO `countries` (`id`, `country_code`, `country_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) COLLATE utf8_croatian_ci NOT NULL,
+  `description` text COLLATE utf8_croatian_ci NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `picture` varchar(255) COLLATE utf8_croatian_ci NOT NULL,
+  `archive` enum('Y','N') COLLATE utf8_croatian_ci NOT NULL,
+  `is_approved` bit(1) NOT NULL DEFAULT b'0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
+
+--
+-- Truncate table before insert `news`
+--
+
+TRUNCATE TABLE `news`;
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`id`, `title`, `description`, `date`, `picture`, `archive`, `is_approved`) VALUES
+(1, 'ZBOG OVAKVIH STVARI MESSI JE NAJVEĆI ? to bi napravio Ronaldo u ovakvoj situaciji?', 'Golove su za Barcu postigli Luis Suarez (29., 47.), Paulinho (41., 75.), ali je utakmica protekla u znaku promašaja Lea Messija. Messi je pogodio dvije vratnice, jednu gredu, imao je još tri čiste prilike, a u 69. minuti mu je vratar Ruben Ramirez obranio i penal. Vratnicu su zatresli i Suarez i Jordi Alba, a Urugvajcu je u 45. minuti poništen regularni gol tako da je momčad iz La Corune glatko mogla izgubiti i s dvocifrenim rezultatom.\r\n \r\nIako Messiju jučer nije išlo, premda nije uspijevao pogoditi mrežu Deportiva, još jednom, po tko zna koji put, pokazao je da je zaista jedan od najvećih ikad. Igrala se 28. minuta utakmice na Camp Nou, golova još nije bilo kad je nakon jednog fantastičnog proigravanja Argentinac izašao sam pred vratara gostiju. Messi je mogao birati gdje će gađati, takve šanse on ne promašuje, no odlučio je loptu dodati Suarezu koji ju je samo gurnuo u praznu mrežu.', '2020-11-22 17:54:34', '1-93.jpg', 'N', b'1'),
+(2, '&quot;EGIPATSKI MESSI&quot;, LEGENDA LIVERPOOLA Kako mu je to uspjelo za samo četiri mjeseca?', 'Golove su za Barcu postigli Luis Suarez (29., 47.), Paulinho (41., 75.), ali je utakmica protekla u znaku promašaja Lea Messija. Messi je pogodio dvije vratnice, jednu gredu, imao je još tri čiste prilike, a u 69. minuti mu je vratar Ruben Ramirez obranio i penal. Vratnicu su zatresli i Suarez i Jordi Alba, a Urugvajcu je u 45. minuti poništen regularni gol tako da je momčad iz La Corune glatko mogla izgubiti i s dvocifrenim rezultatom.\r\n \r\nIako Messiju jučer nije išlo, premda nije uspijevao pogoditi mrežu Deportiva, još jednom, po tko zna koji put, pokazao je da je zaista jedan od najvećih ikad. Igrala se 28. minuta utakmice na Camp Nou, golova još nije bilo kad je nakon jednog fantastičnog proigravanja Argentinac izašao sam pred vratara gostiju. Messi je mogao birati gdje će gađati, takve šanse on ne promašuje, no odlučio je loptu dodati Suarezu koji ju je samo gurnuo u praznu mrežu.', '2020-11-22 17:54:41', '2-14.png', 'N', b'1'),
+(4, 'Test vijesti', 'Ovo je neki tekst vijesti', '2020-11-22 17:34:48', '', 'Y', b'0'),
+(5, 'nova vijest od usera', 'ovo je tekst vijesti', '2020-11-22 18:02:28', '5-82.png', 'N', b'1'),
+(13, 'dwawa', 'fafea', '2020-11-22 18:42:02', '13-29.png', 'N', b'0');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news_pictures`
+--
+
+CREATE TABLE `news_pictures` (
+  `news_pictures_id` int(11) NOT NULL,
+  `news_id` int(11) NOT NULL,
+  `picture` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Truncate table before insert `news_pictures`
+--
+
+TRUNCATE TABLE `news_pictures`;
+--
+-- Dumping data for table `news_pictures`
+--
+
+INSERT INTO `news_pictures` (`news_pictures_id`, `news_id`, `picture`) VALUES
+(2, 13, '13-9.png'),
+(3, 13, '13-49.png'),
+(9, 13, '13-10.png'),
+(10, 13, '13-20.png'),
+(11, 13, '13-50.png');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `roles`
+--
+
+CREATE TABLE `roles` (
+  `roles_id` int(11) NOT NULL,
+  `roles_name` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Truncate table before insert `roles`
+--
+
+TRUNCATE TABLE `roles`;
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`roles_id`, `roles_name`) VALUES
+(1, 'Administrator'),
+(2, 'Editor'),
+(3, 'User');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -301,15 +391,24 @@ CREATE TABLE `users` (
   `createdon` timestamp NOT NULL DEFAULT current_timestamp(),
   `city` varchar(255) COLLATE utf8_croatian_ci NOT NULL,
   `street` varchar(255) COLLATE utf8_croatian_ci NOT NULL,
-  `dateofbirth` date DEFAULT NULL
+  `dateofbirth` date DEFAULT NULL,
+  `role_id` int(11) DEFAULT NULL,
+  `is_active` bit(1) NOT NULL DEFAULT b'0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
 
+--
+-- Truncate table before insert `users`
+--
+
+TRUNCATE TABLE `users`;
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `username`, `password`, `country_id`, `createdon`, `city`, `street`, `dateofbirth`) VALUES
-(19, 'ivo', 'ivic', 'ivo@gmail.com', 'ivo_ivic', 'ivo5', 2, '2020-11-12 17:39:59', '', '', NULL);
+INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `username`, `password`, `country_id`, `createdon`, `city`, `street`, `dateofbirth`, `role_id`, `is_active`) VALUES
+(21, 'Mariow', 'Tušek', 'mario.tuse@gmail.com', 'mario94', '$2y$12$YLQ0tq8r03QEaRtgjpIm0eCuRR/lOnOLD9IxYdeRPUoxJOiQ77wd6', 52, '2020-11-22 10:16:09', 'Krapina', 'Polje Krapinsko 106A', '1994-11-28', 2, b'1'),
+(22, 'Mario', 'Tušek', 'mario.tuse@gmail.com', 'mario942', '$2y$12$fawDfQTPTLxqvMxV4NVX6ex.fhGpVdMzeTeiKvSoC7agq0eNJMgJS', 52, '2020-11-22 13:45:59', 'Krapina', 'Polje Krapinsko 176A', '1994-11-28', 1, b'1'),
+(23, 'Test', 'User', 'tia@hotmail.com', 'test', '$2y$12$.ALffNs96u/iokioWIx.MuYQGZ6bOAQuZJToU6u5v3I5cNxfiIcly', 16, '2020-11-22 17:46:29', 'test', 'test2', '2001-03-12', 3, b'1');
 
 --
 -- Indexes for dumped tables
@@ -322,11 +421,31 @@ ALTER TABLE `countries`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `news_pictures`
+--
+ALTER TABLE `news_pictures`
+  ADD PRIMARY KEY (`news_pictures_id`),
+  ADD KEY `FK_news_pictures` (`news_id`);
+
+--
+-- Indexes for table `roles`
+--
+ALTER TABLE `roles`
+  ADD PRIMARY KEY (`roles_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `FK_countries` (`country_id`);
+  ADD KEY `FK_countries` (`country_id`),
+  ADD KEY `FK_roles` (`role_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -339,20 +458,45 @@ ALTER TABLE `countries`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=246;
 
 --
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `news_pictures`
+--
+ALTER TABLE `news_pictures`
+  MODIFY `news_pictures_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `roles`
+--
+ALTER TABLE `roles`
+  MODIFY `roles_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Constraints for dumped tables
 --
 
 --
+-- Constraints for table `news_pictures`
+--
+ALTER TABLE `news_pictures`
+  ADD CONSTRAINT `FK_news_pictures` FOREIGN KEY (`news_id`) REFERENCES `news` (`id`);
+
+--
 -- Constraints for table `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `FK_countries` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`);
+  ADD CONSTRAINT `FK_countries` FOREIGN KEY (`country_id`) REFERENCES `countries` (`id`),
+  ADD CONSTRAINT `FK_roles` FOREIGN KEY (`role_id`) REFERENCES `roles` (`roles_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
