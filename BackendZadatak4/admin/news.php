@@ -311,7 +311,7 @@
 			print '
 				</tbody>
 			</table>
-			<a href="index.php?menu=' . $menu . '&amp;action=' . $action . '&amp;add=true" class="AddLink">Add news</a>
+			<a href="index.php?menu=' . $menu . '&amp;action=' . $action . '&amp;add=true" class="AddLink">Dodaj vijest</a>
 		</div>';
 	}
 	
