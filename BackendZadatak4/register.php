@@ -55,7 +55,7 @@
 		$result = @mysqli_query($MySQL, $query);
 		$row = @mysqli_fetch_array($result, MYSQLI_ASSOC);
 		
-		if ($row['email'] == '' || $row['username'] == '') {
+		if (isset($row['email']) == false && isset($row['username']) == false) {
 			# password_hash https://secure.php.net/manual/en/function.password-hash.php
 			# password_hash() creates a new password hash using a strong one-way hashing algorithm
 			$pass_hash = password_hash($_POST['password'], PASSWORD_DEFAULT, ['cost' => 12]);
@@ -70,7 +70,7 @@
 			<hr>';
 		}
 		else {
-			echo '<p>Korisnik sa navedenom e-mail adresom već postoji!</p>';
+			echo '<p>Korisnik sa navedenom e-mail adresom ili korisničkim imenom već postoji!</p>';
 		}
 	}
 	print '
