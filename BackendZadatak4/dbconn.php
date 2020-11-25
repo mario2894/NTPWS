@@ -9,4 +9,6 @@
 	# Connect to MySQL database
     $MySQL = mysqli_connect("localhost","root","","webprog") or die('Error connecting to MySQL server.');
     
+    #set utf8
+    @mysqli_query($MySQL, "SET NAMES 'utf8'");
 ?>

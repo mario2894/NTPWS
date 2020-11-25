@@ -53,6 +53,7 @@
 		$query .= " WHERE email='" .  $_POST['email'] . "'";
 		$query .= " OR username='" .  $_POST['username'] . "'";
 		$result = @mysqli_query($MySQL, $query);
+		
 		$row = @mysqli_fetch_array($result, MYSQLI_ASSOC);
 		
 		if (isset($row['email']) == false && isset($row['username']) == false) {
@@ -64,9 +65,7 @@
 			$query .= " VALUES ('" . $_POST['firstname'] . "', '" . $_POST['lastname'] . "', '" . $_POST['email'] . "', '" . $_POST['username'] . "', '" . $pass_hash . "', '" . $_POST['country'] . "', '" . $_POST['city'] . "', '" . $_POST['street'] . "', '" . $_POST['dateofbirth'] . "')";
 			$result = @mysqli_query($MySQL, $query);
             
-			# ucfirst() — Make a string's first character uppercase
-			# strtolower() - Make a string lowercase
-			echo '<p>' . ucfirst(strtolower($_POST['firstname'])) . ' ' .  ucfirst(strtolower($_POST['lastname'])) . ', hvala na registraciji! </p>
+			print '<p>' . $_POST['firstname'] . ' ' .  $_POST['lastname'] . ', hvala na registraciji! </p>
 			<hr>';
 		}
 		else {

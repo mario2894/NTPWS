@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2020 at 06:44 PM
+-- Generation Time: Nov 25, 2020 at 11:03 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -315,10 +315,8 @@ TRUNCATE TABLE `news`;
 --
 
 INSERT INTO `news` (`id`, `title`, `description`, `date`, `picture`, `archive`, `is_approved`) VALUES
-(1, 'ZBOG OVAKVIH STVARI MESSI JE NAJVEĆI ? to bi napravio Ronaldo u ovakvoj situaciji?', 'Golove su za Barcu postigli Luis Suarez (29., 47.), Paulinho (41., 75.), ali je utakmica protekla u znaku promašaja Lea Messija. Messi je pogodio dvije vratnice, jednu gredu, imao je još tri čiste prilike, a u 69. minuti mu je vratar Ruben Ramirez obranio i penal. Vratnicu su zatresli i Suarez i Jordi Alba, a Urugvajcu je u 45. minuti poništen regularni gol tako da je momčad iz La Corune glatko mogla izgubiti i s dvocifrenim rezultatom.\r\n \r\nIako Messiju jučer nije išlo, premda nije uspijevao pogoditi mrežu Deportiva, još jednom, po tko zna koji put, pokazao je da je zaista jedan od najvećih ikad. Igrala se 28. minuta utakmice na Camp Nou, golova još nije bilo kad je nakon jednog fantastičnog proigravanja Argentinac izašao sam pred vratara gostiju. Messi je mogao birati gdje će gađati, takve šanse on ne promašuje, no odlučio je loptu dodati Suarezu koji ju je samo gurnuo u praznu mrežu.', '2020-11-22 17:54:34', '1-93.jpg', 'N', b'1'),
-(2, '&quot;EGIPATSKI MESSI&quot;, LEGENDA LIVERPOOLA Kako mu je to uspjelo za samo četiri mjeseca?', 'Golove su za Barcu postigli Luis Suarez (29., 47.), Paulinho (41., 75.), ali je utakmica protekla u znaku promašaja Lea Messija. Messi je pogodio dvije vratnice, jednu gredu, imao je još tri čiste prilike, a u 69. minuti mu je vratar Ruben Ramirez obranio i penal. Vratnicu su zatresli i Suarez i Jordi Alba, a Urugvajcu je u 45. minuti poništen regularni gol tako da je momčad iz La Corune glatko mogla izgubiti i s dvocifrenim rezultatom.\r\n \r\nIako Messiju jučer nije išlo, premda nije uspijevao pogoditi mrežu Deportiva, još jednom, po tko zna koji put, pokazao je da je zaista jedan od najvećih ikad. Igrala se 28. minuta utakmice na Camp Nou, golova još nije bilo kad je nakon jednog fantastičnog proigravanja Argentinac izašao sam pred vratara gostiju. Messi je mogao birati gdje će gađati, takve šanse on ne promašuje, no odlučio je loptu dodati Suarezu koji ju je samo gurnuo u praznu mrežu.', '2020-11-22 17:54:41', '2-14.png', 'N', b'1'),
-(4, 'Test vijesti', 'Ovo je neki tekst vijesti', '2020-11-22 17:34:48', '', 'Y', b'0'),
-(14, 'Testiranje vijesti galerija', 'test vijesti galerija', '2020-11-23 17:41:53', '14-44.png', 'N', b'1');
+(15, 'Umro je Maradona', 'ARGENTINSKI list Clarin objavio je da je u 61. godini umro Diego Maradona, jedan od najvećih nogometaša ikada. \r\n\r\nInformaciju je potvrdio i brazilski CNN.\r\n\r\nKako navodi Clarin, Maradona je pretrpio kardiorespiratorni zastoj u svojoj kući u kojoj se oporavljao nakon nedavne operacije na mozgu kojom mu je odstranjen krvni ugrušak.\r\n\r\nBrzo mu je pružena pomoć, no njegova tajnica za tisak potvrdila je smrt.\r\n\r\nMaradona je početkom studenog završio u bolnici, a zbog krvarenja u mozgu hitno je operiran. Diego se, barem je tako izgledalo, relativno brzo i dobro oporavio. Međutim, u bolnici su mu dijagnosticirani i znakovi apstinencijske krize zbog čega je i oporavak došao pod znak pitanja te je prebačen u dobro čuvanu ekskluzivnu kliniku za odvikavanje u okolici Buenos Airesa.\r\n\r\nPrije desetak dana je oporavak nastavio kod kuće, međutim, u srijedu je preminuo. Jedan od najboljih nogometaša svih vremena otišao je svega tri tjedna nakon što je proslavio svoj 60. rođendan.', '2020-11-25 21:36:20', '15-5.jpg', 'N', b'1'),
+(16, 'KORONAVIRUS U HRVATSKOJ Konačan popis novih mjera: Zatvaraju se kafići i restorani, kina i kazališta ostaju', 'Kako doznajemo, donesena je konačna odluka da se zatvore svi kafići i restorani, kako je Index prvi jučer i najavio. Nove stroge mjere bi trebale stupiti na snagu u petak u ponoć, dakle na snazi će biti od subote, i trebale bi trajati do Badnjaka. \r\n\r\n&quot;Argument je da se to pretvara u disko klubove&quot;, rekao nam jedan od sudionika sastanka.\r\n\r\nNeke županije ne odustaju od zahtjeva da barem u nekoj mjeri budu izuzete od ove mjere, ali po svemu sudeći im neće biti udovoljeno.\r\n\r\nIako se svi kafići i restorani zatvaraju, restoranima će ipak biti omogućena dostava i to ne do 22 sata kako je prvotno bilo predviđeno, nego neograničeno. ', '2020-11-25 21:37:38', '16-18.jpg', 'N', b'1');
 
 -- --------------------------------------------------------
 
@@ -342,7 +340,8 @@ TRUNCATE TABLE `news_pictures`;
 --
 
 INSERT INTO `news_pictures` (`news_pictures_id`, `news_id`, `picture`) VALUES
-(12, 14, '14-99.png');
+(16, 15, '15-69.jpg'),
+(17, 16, '16-39.jpg');
 
 -- --------------------------------------------------------
 
@@ -401,9 +400,9 @@ TRUNCATE TABLE `users`;
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `username`, `password`, `country_id`, `createdon`, `city`, `street`, `dateofbirth`, `role_id`, `is_active`) VALUES
-(21, 'Mariow', 'Tušek', 'mario.tuse@gmail.com', 'mario94', '$2y$12$YLQ0tq8r03QEaRtgjpIm0eCuRR/lOnOLD9IxYdeRPUoxJOiQ77wd6', 52, '2020-11-22 10:16:09', 'Krapina', 'Polje Krapinsko 106A', '1994-11-28', 2, b'1'),
-(22, 'Mario', 'Tušek', 'mario.tuse@gmail.com', 'mario942', '$2y$12$fawDfQTPTLxqvMxV4NVX6ex.fhGpVdMzeTeiKvSoC7agq0eNJMgJS', 52, '2020-11-22 13:45:59', 'Krapina', 'Polje Krapinsko 176A', '1994-11-28', 1, b'1'),
-(23, 'Test', 'User', 'tia@hotmail.com', 'test', '$2y$12$.ALffNs96u/iokioWIx.MuYQGZ6bOAQuZJToU6u5v3I5cNxfiIcly', 16, '2020-11-22 17:46:29', 'test', 'test2', '2001-03-12', 3, b'1');
+(27, 'Mario', 'Tušek', 'test@gmail.com', 'admin', '$2y$12$4scBRgQgWyMRIAT6T6EfJuZvAYJbAKngLno8Uw9T1KR2DmDQxpe4u', 52, '2020-11-25 21:33:10', 'Zagreb', 'Zagrebačka cesta 12', '1990-01-01', 1, b'1'),
+(28, 'Mario', 'Tušek', 'test.editor@gmail.com', 'editor', '$2y$12$zKyWOhr3WdQVaoOUZAd8nObyTKTmbAJT3MINNwOUEM/Gc8BTg3Beq', 52, '2020-11-25 21:49:42', 'Zagreb', 'Zagrebačka cesta 13', '1990-01-01', NULL, b'0'),
+(33, 'Mario', 'Tušek', 'test.user@gmail.com', 'user', '$2y$12$WYDK0k26e5gcDdBhJKJgCOJB6ri6NAvFFbkjmE7Cm01jNyVN126Fi', 52, '2020-11-25 22:02:17', 'Zagreb', 'Zagrebačka cesta 14', '1990-01-01', NULL, b'0');
 
 --
 -- Indexes for dumped tables
@@ -456,13 +455,13 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `news_pictures`
 --
 ALTER TABLE `news_pictures`
-  MODIFY `news_pictures_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `news_pictures_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -474,7 +473,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- Constraints for dumped tables
