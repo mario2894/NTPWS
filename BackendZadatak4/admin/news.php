@@ -21,7 +21,7 @@
             $_picture = $ID . '-' . rand(1,100) . $ext;
 			copy($_FILES['picture']['tmp_name'], "news/".$_picture);
 			
-			if ($ext == '.jpg' || $ext == '.png' || $ext == '.gif') { # test if format is picture
+			if ($ext == '.jpg' || $ext == '.jpeg' || $ext == '.png' || $ext == '.gif') { # test if format is picture
 				$_query  = "UPDATE news SET picture='" . $_picture . "'";
 				$_query .= " WHERE id=" . $ID . " LIMIT 1";
                 $_result = @mysqli_query($MySQL, $_query);
@@ -61,7 +61,7 @@
 			copy($_FILES['picture']['tmp_name'], "news/".$_picture);
 			
 			
-			if ($ext == '.jpg' || $ext == '.png' || $ext == '.gif') { # test if format is picture
+			if ($ext == '.jpg' || $ext == '.jpeg' || $ext == '.png' || $ext == '.gif') { # test if format is picture
 				$_query  = "UPDATE news SET picture='" . $_picture . "'";
 				$_query .= " WHERE id=" . $ID . " LIMIT 1";
 				$_result = @mysqli_query($MySQL, $_query);
@@ -118,6 +118,7 @@
 	
 	#Show news info
 	if (isset($_GET['id']) && $_GET['id'] != '') {
+		/*
 		$query  = "SELECT * FROM news";
 		$query .= " WHERE id=".$_GET['id'];
 		$query .= " ORDER BY date DESC";
@@ -133,6 +134,43 @@
 			<hr>
 		</div>
 		<p><a href="index.php?menu='.$menu.'&amp;action='.$action.'">Natrag</a></p>';
+		*/
+
+		$query  = "SELECT * FROM news";
+		$query .= " WHERE id=".$_GET['id'];
+		$query .= " ORDER BY date DESC";
+		$result = @mysqli_query($MySQL, $query);
+		$row = @mysqli_fetch_array($result);
+			print '
+			<h2>Pregled vijesti</h2>
+			<div class="news">
+				<img src="news/' . $row['picture'] . '" alt="' . $row['title'] . '" title="' . $row['title'] . '">
+				<h2>' . $row['title'] . '</h2>
+			</div>';
+				
+			print '<div id="top">';
+			//dohvaćanje slika iz galerije
+				$query  = "SELECT * FROM news_pictures";
+				$query .= " WHERE news_id=" . $row["id"];
+				$result = @mysqli_query($MySQL, $query);
+				while($row_ = @mysqli_fetch_array($result)) {
+					print '
+					<div id="gallery">
+						<figure id="' . $row_["news_pictures_id"] . '">
+							<a href="index.php?menu=2&amp;action=' . $row_['news_id'] . '&amp;pic=' . $row_["news_pictures_id"] . '"><img src="gallery/' . $row_['picture'] . '" alt="" title=""></a>
+						</figure>
+					</div>';
+				}
+				print '</div>';
+
+				print '
+			<div class="news">
+				<p>'  . $row['description'] . '</p>
+				<time datetime="' . $row['date'] . '">' . pickerDateTimeToMysql($row['date']) . '</time>
+				
+				<hr>
+			</div>
+			<p><a href="index.php?menu='.$menu.'&amp;action='.$action.'">Natrag</a></p>';
 	}
 	
 	#Add news 

@@ -5,7 +5,7 @@
 			$ext = strtolower(strrchr($_FILES['picture1']['name'], "."));
             $_picture = $ID . '-' . rand(1,100) . $ext;
 			copy($_FILES['picture1']['tmp_name'], "gallery/".$_picture);
-			if ($ext == '.jpg' || $ext == '.png' || $ext == '.gif') { # test if format is picture
+			if ($ext == '.jpg' || $ext == '.jpeg' || $ext == '.png' || $ext == '.gif') { # test if format is picture
 				$_query  = "INSERT news_pictures (news_id, picture) VALUES ('" . $ID . "', '" . $_picture . "')";
                 $_result = @mysqli_query($MySQL, $_query);
                 $_SESSION['message'] .= '<p>Uspješno dodana dodatna slika 1.</p>';
@@ -16,7 +16,7 @@
 			$ext = strtolower(strrchr($_FILES['picture2']['name'], "."));
             $_picture = $ID . '-' . rand(1,100) . $ext;
 			copy($_FILES['picture2']['tmp_name'], "gallery/".$_picture);
-			if ($ext == '.jpg' || $ext == '.png' || $ext == '.gif') { # test if format is picture
+			if ($ext == '.jpg' || $ext == '.jpeg' || $ext == '.png' || $ext == '.gif') { # test if format is picture
 				$_query  = "INSERT news_pictures (news_id, picture) VALUES ('" . $ID . "', '" . $_picture . "')";
                 $_result = @mysqli_query($MySQL, $_query);
                 $_SESSION['message'] .= '<p>Uspješno dodana dodatna slika 2.</p>';
@@ -27,7 +27,7 @@
 			$ext = strtolower(strrchr($_FILES['picture3']['name'], "."));
             $_picture = $ID . '-' . rand(1,100) . $ext;
 			copy($_FILES['picture3']['tmp_name'], "gallery/".$_picture);
-			if ($ext == '.jpg' || $ext == '.png' || $ext == '.gif') { # test if format is picture
+			if ($ext == '.jpg' || $ext == '.jpeg' || $ext == '.png' || $ext == '.gif') { # test if format is picture
 				$_query  = "INSERT news_pictures (news_id, picture) VALUES ('" . $ID . "', '" . $_picture . "')";
                 $_result = @mysqli_query($MySQL, $_query);
                 $_SESSION['message'] .= '<p>Uspješno dodana dodatna slika 3.</p>';
@@ -38,7 +38,7 @@
 			$ext = strtolower(strrchr($_FILES['picture4']['name'], "."));
             $_picture = $ID . '-' . rand(1,100) . $ext;
 			copy($_FILES['picture4']['tmp_name'], "gallery/".$_picture);
-			if ($ext == '.jpg' || $ext == '.png' || $ext == '.gif') { # test if format is picture
+			if ($ext == '.jpg' || $ext == '.jpeg' || $ext == '.png' || $ext == '.gif') { # test if format is picture
 				$_query  = "INSERT news_pictures (news_id, picture) VALUES ('" . $ID . "', '" . $_picture . "')";
                 $_result = @mysqli_query($MySQL, $_query);
                 $_SESSION['message'] .= '<p>Uspješno dodana dodatna slika 4.</p>';
@@ -49,7 +49,7 @@
 			$ext = strtolower(strrchr($_FILES['picture5']['name'], "."));
             $_picture = $ID . '-' . rand(1,100) . $ext;
 			copy($_FILES['picture5']['tmp_name'], "gallery/".$_picture);
-			if ($ext == '.jpg' || $ext == '.png' || $ext == '.gif') { # test if format is picture
+			if ($ext == '.jpg' || $ext == '.jpeg' || $ext == '.png' || $ext == '.gif') { # test if format is picture
 				$_query  = "INSERT news_pictures (news_id, picture) VALUES ('" . $ID . "', '" . $_picture . "')";
                 $_result = @mysqli_query($MySQL, $_query);
                 $_SESSION['message'] .= '<p>Uspješno dodana dodatna slika 5.</p>';

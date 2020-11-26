@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2020 at 11:11 PM
+-- Generation Time: Nov 26, 2020 at 07:30 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -318,7 +318,8 @@ TRUNCATE TABLE `news`;
 
 INSERT INTO `news` (`id`, `title`, `description`, `date`, `picture`, `archive`, `is_approved`) VALUES
 (15, 'Umro je Maradona', 'ARGENTINSKI list Clarin objavio je da je u 61. godini umro Diego Maradona, jedan od najvećih nogometaša ikada. \r\n\r\nInformaciju je potvrdio i brazilski CNN.\r\n\r\nKako navodi Clarin, Maradona je pretrpio kardiorespiratorni zastoj u svojoj kući u kojoj se oporavljao nakon nedavne operacije na mozgu kojom mu je odstranjen krvni ugrušak.\r\n\r\nBrzo mu je pružena pomoć, no njegova tajnica za tisak potvrdila je smrt.\r\n\r\nMaradona je početkom studenog završio u bolnici, a zbog krvarenja u mozgu hitno je operiran. Diego se, barem je tako izgledalo, relativno brzo i dobro oporavio. Međutim, u bolnici su mu dijagnosticirani i znakovi apstinencijske krize zbog čega je i oporavak došao pod znak pitanja te je prebačen u dobro čuvanu ekskluzivnu kliniku za odvikavanje u okolici Buenos Airesa.\r\n\r\nPrije desetak dana je oporavak nastavio kod kuće, međutim, u srijedu je preminuo. Jedan od najboljih nogometaša svih vremena otišao je svega tri tjedna nakon što je proslavio svoj 60. rođendan.', '2020-11-25 21:36:20', '15-5.jpg', 'N', b'1'),
-(16, 'KORONAVIRUS U HRVATSKOJ Konačan popis novih mjera: Zatvaraju se kafići i restorani, kina i kazališta ostaju', 'Kako doznajemo, donesena je konačna odluka da se zatvore svi kafići i restorani, kako je Index prvi jučer i najavio. Nove stroge mjere bi trebale stupiti na snagu u petak u ponoć, dakle na snazi će biti od subote, i trebale bi trajati do Badnjaka. \r\n\r\n&quot;Argument je da se to pretvara u disko klubove&quot;, rekao nam jedan od sudionika sastanka.\r\n\r\nNeke županije ne odustaju od zahtjeva da barem u nekoj mjeri budu izuzete od ove mjere, ali po svemu sudeći im neće biti udovoljeno.\r\n\r\nIako se svi kafići i restorani zatvaraju, restoranima će ipak biti omogućena dostava i to ne do 22 sata kako je prvotno bilo predviđeno, nego neograničeno. ', '2020-11-25 21:37:38', '16-18.jpg', 'N', b'1');
+(16, 'KORONAVIRUS U HRVATSKOJ Konačan popis novih mjera: Zatvaraju se kafići i restorani, kina i kazališta ostaju', 'Kako doznajemo, donesena je konačna odluka da se zatvore svi kafići i restorani, kako je Index prvi jučer i najavio. Nove stroge mjere bi trebale stupiti na snagu u petak u ponoć, dakle na snazi će biti od subote, i trebale bi trajati do Badnjaka. \r\n\r\n&quot;Argument je da se to pretvara u disko klubove&quot;, rekao nam jedan od sudionika sastanka.\r\n\r\nNeke županije ne odustaju od zahtjeva da barem u nekoj mjeri budu izuzete od ove mjere, ali po svemu sudeći im neće biti udovoljeno.\r\n\r\nIako se svi kafići i restorani zatvaraju, restoranima će ipak biti omogućena dostava i to ne do 22 sata kako je prvotno bilo predviđeno, nego neograničeno. ', '2020-11-25 21:37:38', '16-18.jpg', 'N', b'1'),
+(19, 'Plenković nam je danas uveo novi lockdown', 'Plenković je danas govorio o novim mjerama koje su neupitno strože od svih mjera koje smo dosad imali u drugom valu epidemije koronavirusa. Za uvođenje novih mjera Plenković je, naravno, optužio građane i njihovo nepridržavanje mjera, pri čemu je potpuno ignorirao činjenicu da su ga i liječnici i nezanemariv dio znanstvenika i epidemiologa već tjednima doslovno molili da uvede strože mjere.\r\n\r\nAko pod riječju lockdown podrazumijevamo zaključavanje gospodarstva, onda nema nikakve sumnje da je Plenković danas za nezanemariv dio gospodarstva, odnosno onaj dio ekonomije koji je bio zatvoren i na proljeće, zapravo najavio novi lockdown.\r\n\r\nNovim mjerama tako se zabranjuje rad kafića, restorana i teretana te održavanje sajmova, uključujući i one adventske. Prodaja alkohola zabranjena je od 22 do 6 ujutro, a pekarnicama se zabranjuje rad nakon 22 sata. \r\n\r\nCijeli popis novih strogih mjera možete pročitati ovdje, ali činjenica ostaje da se mjere koje su najavljene danas i koje će trajati od ponoći s petka na subotu do 21. prosinca, ne razlikuju uvelike od onih koje su bile uvedene na proljeće.', '2020-11-26 17:52:22', '19-43.jpeg', 'N', b'1');
 
 -- --------------------------------------------------------
 
@@ -343,7 +344,9 @@ TRUNCATE TABLE `news_pictures`;
 
 INSERT INTO `news_pictures` (`news_pictures_id`, `news_id`, `picture`) VALUES
 (16, 15, '15-69.jpg'),
-(17, 16, '16-39.jpg');
+(17, 16, '16-39.jpg'),
+(19, 19, '19-93.jpeg'),
+(20, 19, '19-51.jpg');
 
 -- --------------------------------------------------------
 
@@ -457,13 +460,13 @@ ALTER TABLE `countries`
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `news_pictures`
 --
 ALTER TABLE `news_pictures`
-  MODIFY `news_pictures_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `news_pictures_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `roles`

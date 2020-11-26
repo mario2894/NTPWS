@@ -87,6 +87,9 @@ hr {
 	padding: 0.5em;
 	margin: 0 1em 0.5em 0.5em;
 }
+.news img .ngallery {
+	width: 30%;
+}
 .news h2 {
 	margin: 0.5em 0.7em;
 	font-size: 1.5em;
@@ -101,6 +104,7 @@ hr {
 	font-size: 90%;
 	font-style: italic;
 }
+
 .description {
 	font-weight: bold;
 	margin: 0.8em 1em 1.5em 1em;
@@ -307,6 +311,13 @@ footer img {
 	width: 16px;
 }
 
+#top {
+	width:400px; 
+    display:inline-block; 
+    margin-right:10px; 
+    padding:0; 
+}
+
 @media screen and (max-width: 900px) {
 	figure {
 		width: 90%;
@@ -331,6 +342,8 @@ footer img {
 		font-size: 90%;
 		text-align: center;
 	}
+
+	
 	#gallery figure {	
 		padding: 0.5em;	
 		margin: 0 1em 0.5em 1em;	

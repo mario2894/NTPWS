@@ -10,6 +10,7 @@ include ("dbconn.php");
 
 if(isset($_GET['menu'])) { $menu   = (int)$_GET['menu']; }
 if(isset($_GET['action'])) { $action   = (int)$_GET['action']; }
+if(isset($_GET['pic'])) { $pic   = (int)$_GET['pic']; }
 	
 if(!isset($_POST['_action_']))  { $_POST['_action_'] = FALSE;  }
 	
